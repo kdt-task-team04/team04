@@ -19,10 +19,14 @@ if __name__ == '__main__':
     #사진 수정, 수정된 사진에 title뒤에 '수정됨'을 붙임
     find_by_id_query = "select id from tbl_photos where id = %s"
     find_by_id_params = 1,
+
+    photos = find_by_id(find_by_id_query, find_by_id_params)
+    
     photos['content'] = '수정됨'
     update_query = "update tbl_photos set title = %, url = %s, thumbnail_url = %s where id = %s"
     update_params = ((album.get('id'), photos.get('title'), photos.get('url'), photos.get('thumbnail_url')))
     update(update_query, update_params)
+
 
     #사진 삭제
     delete_query = "delete from tbl_photos where id =%s"
