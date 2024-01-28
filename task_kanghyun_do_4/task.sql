@@ -88,6 +88,6 @@ values ("Keebler LLC","User-centric fault-tolerant solution","revolutionize end-
 
 select * from tbl_address;
 select * from tbl_company;
-select * from tbl_users;
+select * from tbl_post;
 
 
