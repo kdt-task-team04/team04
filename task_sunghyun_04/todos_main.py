@@ -35,18 +35,30 @@ if __name__ == '__main__':
 #
 #     save_many(save_many_query, save_many_params)
 
-    # todos title 정보 수정(업데이트)
-    find_by_id_query = "select * from tbl_todos where id = %s"
-    find_by_id_params = (1,)
-    todos = find_by_id(find_by_id_query, find_by_id_params)
+    # todos title 정보 수정(업데이트 - 해당 id가 존재할 때만 수정 가능하게끔 서비스 구현)
 
-    if todos:
-        # 수정할 해당 id 가 있을 때만 업데이트 수행
-        update_query = "update tbl_todos set title = %s where id = %s"
-        update_params = ("수정된 제목", 1)
-        update(update_query, update_params)
-    else:
-        print("해당하는 id를 찾을 수 없습니다.")
+    # find_by_id_query = "select * from tbl_todos where id = %s"
+    # find_by_id_params = (1,)
+    # todos = find_by_id(find_by_id_query, find_by_id_params)
+    #
+    # if todos:
+    #     # 수정할 해당 id 가 있을 때만 업데이트 수행
+    #     update_query = "update tbl_todos set title = %s where id = %s"
+    #     update_params = ("수정된 제목", 1)
+    #     update(update_query, update_params)
+    # else:
+    #     print("해당하는 id를 찾을 수 없습니다.")
+
+    # todos title 정보 수정 (업데이트 (basic version))
+
+    find_by_id_query = "select * from tbl_todos where id = %s"
+    find_by_id_params = 1,
+    todos = find_by_id(find_by_id_query,find_by_id_params)
+    todos['title'] = "수정된 제목"
+
+    update_query = "update tbl_todos set title = %s where id = %s"
+    update_query_params = (todos.get('title'),todos.get('id'))
+    update(update_query,update_query_params)
 
     # # todos 전체 정보 삭제
     #
