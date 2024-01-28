@@ -9,7 +9,7 @@ create table tbl_users(
 
 create table tbl_album(
     id bigint auto_increment primary key,
-    title varchar(255) not null
+    title varchar(255) not null,
     users_id bigint not null,
     constraint fk_album_users foreign key (users_id)
     references tbl_users(id)
