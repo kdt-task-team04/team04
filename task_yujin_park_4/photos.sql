@@ -10,9 +10,9 @@ create table tbl_users(
 create table tbl_album(
     id bigint auto_increment primary key,
     title varchar(255) not null
-    user_id bigint not null,
-    constraint fk_album_user foreign key (user_id)
-    references tbl_user(id)
+    rusers_id bigint not null,
+    constraint fk_album_users foreign key (users_id)
+    references tbl_users(id)
 
 );
 
@@ -26,4 +26,4 @@ create table tbl_photos(
     references tbl_album (id)
 );
 
-select * from tbl_photos;
+select * from tbl_users;
