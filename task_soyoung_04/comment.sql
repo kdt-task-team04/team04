@@ -16,3 +16,5 @@ create table tbl_comment(
 select * from tbl_post;
 select * from tbl_comment;
 
+create database comment;
+use comment;
