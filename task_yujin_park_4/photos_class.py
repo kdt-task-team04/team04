@@ -6,9 +6,3 @@ class Photo:
         self.url = url
         self.thumbnail_url = thumbnail_url
 
-
-class Album:
-    def __init__(self,id: int, user_id: int, title:str):
-        self.id = id
-        self.user_id = user_id
-        self.title = title

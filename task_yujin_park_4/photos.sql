@@ -27,3 +27,5 @@ create table tbl_photos(
 );
 
 select * from tbl_users;
+select * from tbl_album;
+select * from tbl_photos;
