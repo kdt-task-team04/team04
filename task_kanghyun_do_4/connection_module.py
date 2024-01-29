@@ -2,7 +2,7 @@ import pymysql
 from pymysql.cursors import Cursor
 
 def connect():
-    conn = pymysql.connect(host='3.35.176.190', user='mysql', passwd='1234', db='comments', charset='utf8', autocommit=False)
+    conn = pymysql.connect(host='13.124.174.82', user='mysql', passwd='1234', db='test', charset='utf8', autocommit=False)
     # cursor : 내가 작성한 쿼리가 직접 실행될 수 있게 해주는 객체
     cursor = conn.cursor(pymysql.cursors.DictCursor)
     return conn, cursor
