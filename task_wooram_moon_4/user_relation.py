@@ -85,7 +85,8 @@ import hashlib
     #                     on u.id = %s and u.id = a.user_id"
     #
     # users = find_all_by(find_all_by_query, find_by_id_params)
-    #
+    # 4번 유저의 주소정보를 불러옴
+
     # address_find = Address(address.get("id"), address.get("street"), address.get("suite"), address.get("city"), address.get("zipcode"), users)
     # print(address_find.__dict__)
     #

@@ -1,5 +1,5 @@
 class User :
-    def __init__(self,id,name,username,email,phone,website) :
+    def __init__(self,id:int,name:str,username:str,email:str,phone:int,website:str) :
         self.id = id
         self.name = name
         self.username = username
@@ -8,7 +8,7 @@ class User :
         self.website = website
 
 class Todo:
-    def __init__(self, user_id, id, title, completed):
+    def __init__(self, user_id:int, id:int, title:str, completed:bool):
         self.user_id = user_id
         self.id = id
         self.title = title
