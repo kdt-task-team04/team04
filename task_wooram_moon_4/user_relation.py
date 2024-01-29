@@ -41,7 +41,7 @@ import hashlib
 
     # # 회사 정보 추가
 
-    # save_many_query = ("insert into tbl_company(name,catchPhrase,bs,user_id)"
+    # save_many_query = ("insert into tbl_company(name,catch_phrase,bs,user_id)"
     #                    "values(%s,%s,%s,%s)")
     #
     # save_many_params = (
@@ -88,7 +88,7 @@ import hashlib
     #
     # address_find = Address(address.get("id"), address.get("street"), address.get("suite"), address.get("city"), address.get("zipcode"), users)
     # print(address_find.__dict__)
-    #
+
     # # 주소 목록
     # find_all_by_query = "select a.id, a.street, a.suite, a.city, a.zipcode \
     #                      from tbl_users u join tbl_address a \
@@ -130,7 +130,7 @@ import hashlib
 
 
     #geo 목록
-    # find_all_by_query = "select g.id, g.lat, g.lng, a.street, a.city, a.suite \
+    # find_all_by_query = "select g.id, g.lat, g.lng, a.street, a.city, a.suite, g.address_id \
     #                      from tbl_address a join tbl_geo g \
     #                      on a.id = g.address_id \
     #                      order by id desc"
@@ -147,7 +147,7 @@ import hashlib
     # update(update_query, update_params)
 
     # 회사 상세보기
-    # find_by_id_query = "select id, name, catchPhrase, bs, user_id  \
+    # find_by_id_query = "select id, name, catch_phrase, bs, user_id  \
     #                     from tbl_company \
     #                     where id = %s"
     # find_by_id_params = 3,
@@ -159,11 +159,11 @@ import hashlib
     #
     # users = find_all_by(find_all_by_query, find_by_id_params)
     #
-    # address_find = Company(companies.get("id"), companies.get("name"), companies.get("catchPhrase"), companies.get("bs"), users)
+    # address_find = Company(companies.get("id"), companies.get("name"), companies.get("catch_phrase"), companies.get("bs"), users)
     # print(address_find.__dict__)
 
     # 회사 목록
-    # find_all_by_query = "select c.id, c.name, c.catchPhrase, c.bs, c.user_id \
+    # find_all_by_query = "select c.id, c.name, c.catch_phrase, c.bs, c.user_id \
     #                      from tbl_users u join tbl_company c \
     #                      on u.id = c.user_id \
     #                      order by id desc"
@@ -174,7 +174,7 @@ import hashlib
     # 회사 업데이트
     # update_id = 7
     # update_query = "update tbl_company " \
-    #                "set name =  %s, catchPhrase = %s, bs = %s " \
+    #                "set name =  %s, catch_phrase = %s, bs = %s " \
     #                "where id = %s"
     # update_params = ['kebin-clean', 'database', 'revolustions woo', update_id]
     # update(update_query, update_params)
